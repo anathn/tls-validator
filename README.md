@@ -51,7 +51,7 @@ Running main.py will begin the scanning process. If you created a domain list fi
 ```
 python main.py sample-file.txt
 ```
-main.py will output two files by default:
+main.py will output two files in the `output` directory by default:
 
 **all_domains.html**
 * Contains all domains and their detected status.
@@ -60,3 +60,13 @@ main.py will output two files by default:
 * Contains ONLY domains that had issues detected.
 
 You can modify these filenames in main.py
+
+## Runing in Docker
+Build the image:
+```
+docker build -t tls .
+```
+Run the image: (Be sure to swap out your filenames)
+```
+docker run -it --rm -v $(pwd)/sample-file.txt:/app/samplefile.txt -v $(pwd)/output:/app/output -eFILENAME=/app/sample-file.txt tls
+```
