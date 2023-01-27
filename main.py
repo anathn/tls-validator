@@ -25,10 +25,13 @@ def main(filename):
     # Have issues (invalid names, etc)
     troubled_domains = filter_troubles(domain_data)
 
+    # create output dir if its not there
+    if not os.path.exists('output'):
+        os.mkdir('output')
     # dump all domains to html page
-    create_html('all_domains.html', domain_data)
+    create_html(os.path.join('output', 'all_domains.html'), domain_data)
     # dump troubled domains to html page
-    create_html('troubles.html', troubled_domains)
+    create_html(os.path.join('output', 'troubles.html'), troubled_domains)
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
