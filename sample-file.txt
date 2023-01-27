@@ -1,0 +1,8 @@
+dl.n8s.me
+google.com
+spotter.fuzzybastard.com:443
+webmail.nathansloan.com
+yahoo.com
+validaus.com
+vault.prod.discotools.cloud
+build.nk8s.co
